@@ -1,33 +1,34 @@
+const { jsx } = require("react/jsx-runtime");
 
-let name ='Calculation';
+let name = 'Calculation';
 console.log(name);
 
 
-let x=2;
-let y=4;
-let add=x+y;
-let sub=x-y;
-let mul=x*y;
-let div=y/x;
-compare= x>y ? x+1 : x+2;
- let inc=x++;
-let inc2=++y;
-let A=5; let B="5";
-let f="City";
-let g=5;
+let x = 2;
+let y = 4;
+let add = x + y;
+let sub = x - y;
+let mul = x * y;
+let div = y / x;
+compare = x > y ? x + 1 : x + 2;
+let inc = x++;
+let inc2 = ++y;
+let A = 5; let B = "5";
+let f = "City";
+let g = 5;
 
 
-console.log(A==B);  //true  It only check the value not datatype
-console.log(A===B); //false It will check both value and datatype
-console.log('Addition is:',add);
-console.log('Subtraction is:',sub);
-console.log('Multiplication is:',mul);
-console.log('Division is:',div);
-console.log('Comparison is:',compare);
-console.log('Post Increment is:',inc);
-console.log('Pre Increment is:',inc2);
+console.log(A == B);  //true  It only check the value not datatype
+console.log(A === B); //false It will check both value and datatype
+console.log('Addition is:', add);
+console.log('Subtraction is:', sub);
+console.log('Multiplication is:', mul);
+console.log('Division is:', div);
+console.log('Comparison is:', compare);
+console.log('Post Increment is:', inc);
+console.log('Pre Increment is:', inc2);
 
-console.log(f+g);
+console.log(f + g);
 
 // Day 2
 
@@ -41,22 +42,21 @@ fruits.unshift('Strawberry'); // for adding element at first
 fruits.shift(); // for removing first element
 console.log(fruits);
 
-let Var=[1,2,3,4,5,6,7,8,9,0];
+let Var = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 let i;
 // for (i=0;i<10;i++)
 // {
 //     console.log(Var[i]);
 // }
-let sum=0;
+let sum = 0;
 let avg;
-for(i=0; i<Var.length;i++)
-{
-    sum=sum+Var[i];
-    
+for (i = 0; i < Var.length; i++) {
+    sum = sum + Var[i];
+
     console.log(Var[i]);
 }
-console.log("sum is:",sum);
-console.log("Average is:",sum/Var.length);
+console.log("sum is:", sum);
+console.log("Average is:", sum / Var.length);
 
 
 
@@ -68,11 +68,11 @@ let rule = /l/;
 let rule3 = /[A-Z]/; // for capital letters
 // let rule = /[a-zA-Z]/; // for both small and capital letters
 // let rule = /[0-9]/; // for digits
-console.log(rule.test(text)); 
-console.log(rule3.test(text)); 
+console.log(rule.test(text));
+console.log(rule3.test(text));
 
 let text2 = "12345";
-let rule2 = /\d/ ;
+let rule2 = /\d/;
 //  Or, /[0-9]/;
 console.log(rule2.test(text2));
 
@@ -82,7 +82,7 @@ console.log(rule.test(text4));
 
 
 
-      // Regular Expression Symbols NOTES
+// Regular Expression Symbols NOTES
 // . = any one character
 // * = 0 or more times
 // + = 1 or more times
@@ -93,21 +93,73 @@ console.log(rule.test(text4));
 // {n} = exact n of times
 
 // EXAMPLES
- let text5 = "sujan@123";
- let rule5 = /^(?=.*[A-Z]) (?=.*[a-z]) (?=.*\d) (?=.*[@$!%*?&]) [A-Za-z\d@$!%*?&] {8,}$/;
- console.log(rule5.test(text5));
+let text5 = "sujan@123";
+let rule5 = /^(?=.*[A-Z]) (?=.*[a-z]) (?=.*\d) (?=.*[@$!%*?&]) [A-Za-z\d@$!%*?&] {8,}$/;
+console.log(rule5.test(text5));
 
- //DAY 5
+//DAY 5
 
- //email validation
+//email validation
 
-let email ="suj.an123@gmail.com";
-              // first line  //@ //forGmail //for. //com
+let email = "suj.an123@gmail.com";
+// first line  //@ //forGmail //for. //com
 let emailrule = /^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z]+$/
 console.log("email validate");
-console.log (emailrule.test(email));
+console.log(emailrule.test(email));
 
 console.log(".np validation");
-let np="ankit.55624mmamc.tu.edu.np";
-let nprule= /^[a-zA-Z0-9]+\.[a-zA-Z]+\.[a-zA-Z] +\.[a-zA-Z]/;
+let np = "ankit.55624mmamc.tu.edu.np";
+let nprule = /^[a-zA-Z0-9.]+\.[a-zA-Z]+\.[a-zA-Z] +\.[a-zA-Z]/;
 console.log(nprule.test(np));
+
+function changetext() {
+    document.getElementById("text").innerText = "sujan";
+}
+
+
+//day6
+
+function validate() {
+    let name = document.getElementById("username").value;
+    let error = document.getElementById("error");
+
+    if (name === "") // check if the name box is blank 
+
+    {
+        error.innerText = "Please fill the form";
+        return false; // stop submit
+    }
+    error.innerText = "Name Submitted";
+    console.log("User Name", name);
+    return false; // stop page from refreshing
+
+    //  if (name === (rule=/[a-zA-Z]/))
+    // {
+    //     error.innerText = "Please fill the form";
+    //     return false; // stop submit
+    // }
+}
+
+
+//DAY 7 Event handling 
+
+
+let clickBtn = document.getElementById('ClickBtn');
+let dblClickBtn = document.getElementById('dblClickBtn');
+let box = document.getElementById('box');
+
+clickBtn.addEventListener('click', () => {
+    alert('Button Clicked !');
+});
+
+dblClickBtn.addEventListener('dblclick', () => {
+    alert('Button Double Clicked!');
+});
+
+box.addEventListener('mouseover', () => {
+    box.style.backgroundColor = 'red';
+});
+
+box.addEventListener('mouseout', () => {
+    box.style.backgroundColor = 'lightblue';
+});

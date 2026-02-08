@@ -1,22 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-
-       <script src="Day.js">   </script>
-
 </head>
+
 <body>
     <p id="text">Hello me</p>
     <button onclick="changetext()">change</button>
- <script>
-    function changetext()
-    {
-        document.getElementById("text").innerText="sujan";
-    }
- </script>
-     
+
+    <!-- day 6  creating form and try to return the form to calling section  -->
+    <form onsubmit="return validate()" method="get">
+        <label for="username">Name : </label><br>
+        <input type="text"id="username" name="username">+
+        <div class="error"id="error"></div><br>
+        <button type="submit">Ok</button>
+        <!-- <input type="submit" value="submit"> -->
+    </form>
+    <!-- DAY 7 Event Handling -->
+
+    <br><br>
+
+    <button id="ClickBtn">Click Me</button>
+    <button id="dblClickBtn">Double Click Me</button>
+    <div id="box">Hover me!</div>
+
+    <!-- keyboard event -->
+    <input type="text " id="keyInput" placeholder="Type something">
+
+    <form id="myForm">
+        <input type="text" name="name" placeholder="Enter your name">
+        <button type="submit">Submit</button>
+    </form>
+
+    
+
+    <script src="Day.js"></script>
 </body>
+
 </html>
