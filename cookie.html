@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+      <h2>Cookie statue machine</h2>
+
+     <button onClick="makecookie()">1. Bake Cookie</button>
+     <button onClick="readCookie()">2. Check Cookie</button>
+     <button onClick="eatCookie()">3. Delete Cookies</button>
+     
+     <h3 id="display">status: Waiting...</h3>
+     <script>
+        
+// DAY 8 Cookies
+
+const display = document.getElementById('display');
+
+//function to set a cookie
+function makecookie() {
+    //we save "user=Sujan"
+    //we add "max-age=3600" so it lastes for 1 hour(3600 sec)
+    document.cookie = "user=sujan; max-age=5; path=/";// path= server location
+    display.innerText = "Status: Cookie 'user=sujan' has been saved !";
+}
+
+function readCookie()
+ {
+    //document.cookie is a string: "user=sujan; other=date"
+    if (document.cookie.length != 0) 
+    {
+        alert("The browser says: " + document.cookie);
+        display.innerText = "Status : Found cookie!";
+    }
+    else {
+        alert("No cookies found!");
+        display.innerText = "status: the jar is empty";
+
+    }
+}
+
+// function to delete a cookie 
+function eatCookie() {
+    // to delete a cookies, ou just sset its 'max-age ' to 0
+    document.cookies = "user=; max-age=0 ; path=/";
+    display.innerText = "status: cookie deleted";
+}
+     </script>
+</body>
+</html>

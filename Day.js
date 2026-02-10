@@ -1,4 +1,3 @@
-const { jsx } = require("react/jsx-runtime");
 
 let name = 'Calculation';
 console.log(name);
@@ -144,9 +143,9 @@ function validate() {
 //DAY 7 Event handling 
 
 
-let clickBtn = document.getElementById('ClickBtn');
-let dblClickBtn = document.getElementById('dblClickBtn');
-let box = document.getElementById('box');
+const clickBtn = document.getElementById('ClickBtn');
+const dblClickBtn = document.getElementById('dblClickBtn');
+const box = document.getElementById('box');
 
 clickBtn.addEventListener('click', () => {
     alert('Button Clicked !');
@@ -163,3 +162,39 @@ box.addEventListener('mouseover', () => {
 box.addEventListener('mouseout', () => {
     box.style.backgroundColor = 'lightblue';
 });
+
+
+// day8 Cookies
+
+const display = document.getElementById('display');
+
+//function to set a cookie
+function makecookie() {
+    //we save "user=Sujan"
+    //we add "max-age=3600" so it lastes for 1 hour(3600 sec)
+    document.cookie = "user=sujan; max-age=3600; path=/";
+    display.innerText = "Status: Cookie 'user=sujan' has been saved !";
+}
+
+function readCookie()
+ {
+    //document.cookie is a string: "user=sujan; other=date"
+    if (document.cookie.length != 0) {
+        alert("The browser says: " + document.cookie);
+        display.innerText = "Status : Found cookie!";
+
+    }
+    else {
+        alert("No cookies found!");
+        display.innerText = "status: the jar is empty";
+
+    }
+}
+
+// function to delete a cookie 
+function eatCookie() {
+    // to delete a cookies, ou just sset its 'max-age ' to 0
+    document.cookies = "user=; max-age=0 ; path=/";
+    display.innerText = "status: cookie deleted";
+
+}
